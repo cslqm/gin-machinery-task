@@ -11,3 +11,12 @@ POST   /api/v1/tasks             --> github.com/cslqm/gin-machinery-task/routers
 POST   /api/v1/tasks/:id         --> github.com/cslqm/gin-machinery-task/routers/api/v1.UpdateTask (4 handlers)
 DELETE /api/v1/tasks/:id         --> github.com/cslqm/gin-machinery-task/routers/api/v1.DeleteTask (4 handlers)
 ```
+
+## frame
+![frame](https://github.com/cslqm/gin-machinery-task/blob/master/img/gin-machnery-task.png)
+
+## datebases
+
+![tables](https://github.com/cslqm/gin-machinery-task/blob/master/img/task_svr_user.png)
+
+![er](https://github.com/cslqm/gin-machinery-task/blob/master/img/e-r.png)
