@@ -1,0 +1,48 @@
+syntax = "proto3";
+package pqs;
+
+import "github.com/golang/protobuf/ptypes/struct/struct.proto";
+
+service PQStream {
+  // Listen responds with a stream of database operations.
+  rpc Listen (ListenRequest) returns (stream Event) {}
+}
+
+// A request to listen to database event streams.
+message ListenRequest {
+  // if provided, this string will be used to match table names to track.
+  string table_regexp = 1;
+}
+
+// An operation in the database.
+enum Operation {
+  UNKNOWN = 0;
+  INSERT = 1;
+  UPDATE = 2;
+  DELETE = 3;
+  TRUNCATE = 4;
+}
+
+// RawEvent is an internal type.
+message RawEvent {
+  string schema = 1;
+  string table = 2;
+  Operation op = 3;
+  string id = 4;
+  google.protobuf.Struct payload = 5;
+  google.protobuf.Struct previous = 6;
+}
+
+// A database event.
+message Event {
+  string schema = 1;
+  string table = 2;
+  Operation op = 3; 
+  // if the id column exists, this will populate it
+  string id = 4;
+  // payload is a json encoded representation of the changed object.
+  google.protobuf.Struct payload = 5;
+  // changes is, in the event of op==UPDATE an RFC7386 JSON merge patch.
+  google.protobuf.Struct changes = 6;
+}
+
