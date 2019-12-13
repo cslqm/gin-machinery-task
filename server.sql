@@ -1,8 +1,8 @@
-DROP DATABASE `cslqm_cslqm_cslqm_cslqm_task_svr`;
+DROP DATABASE `cslqm_task_svr`;
 
-CREATE DATABASE `cslqm_cslqm_cslqm_cslqm_task_svr`;
+CREATE DATABASE `cslqm_task_svr`;
 
-use cslqm_cslqm_cslqm_cslqm_task_svr;
+use cslqm_task_svr;
 
 CREATE TABLE `task_svr_user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -26,4 +26,4 @@ CREATE TABLE `task_svr_task` (
   CONSTRAINT `task_1` FOREIGN KEY (`created_by`) REFERENCES `task_svr_user` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='任务管理';
 
-INSERT INTO `cslqm_cslqm_cslqm_cslqm_task_svr`.`task_svr_user` (`id`, `username`, `password`) VALUES (null, 'test', 'test123456');
+INSERT INTO `cslqm_task_svr`.`task_svr_user` (`id`, `username`, `password`) VALUES (null, 'test', 'test123456');
