@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<h1>
+			Packer image make server
+		</h1>
+		<form action="api/v1/task" method="post">
+			<input type="text" style="display:none" name="created_by" value="hellouser">
+			<input type="number" style="display:none" name="state" step="1" value="1"/>
+			<input type="text" style="display:none" name="token" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJwYXNzd29yZCI6InRlc3QxMjM0NTYiLCJleHAiOjE1Njc2MDk2MTIsImlzcyI6Imt2bS1pbWctc3ZyIn0.U2LrjqIHul3y-YTYwgCtd8gvp5eYElKcnLwXFfednvE">
+  			<p>Task name <input type="text" name="task_name" /> </p>
+  			<p>Packer json <input type="text" name="content" /></p>
+  			<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>
